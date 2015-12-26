@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>me.minotopia</groupId>
+    <artifactId>armorstandeditor</artifactId>
+    <version>1.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>ArmorStandEditor</name>
+    <description>ArmorStandEdior is a Spigot plugin which allowes you to easily modify armor stands in minecraft</description>
+
+    <inceptionYear>2015</inceptionYear>
+
+    <organization>
+        <url>https://www.minotopia.me</url>
+        <name>MinoTopia</name>
+    </organization>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+    </properties>
+
+    <developers>
+        <developer>
+            <id>janmm14</id>
+            <name>Jan Marian Meyer</name>
+            <organization>MinoTopia</organization>
+            <organizationUrl>https://minotopia.me</organizationUrl>
+            <email>ase-pom-github@janmm14.de</email>
+            <timezone>1</timezone>
+            <url>https://github.com/Janmm14</url>
+        </developer>
+    </developers>
+
+    <scm>
+        <url>https://github.com/minotopiame/ArmorStandEditor</url>
+        <connection>scm:git:git://github.com/minotopiame/ArmorStandEditor.git</connection>
+        <developerConnection>scm:git:git@github.com:minotopiame/ArmorStandEditor.git</developerConnection>
+    </scm>
+
+    <repositories>
+        <repository>
+            <id>spigot-repo</id>
+            <!-- Spigot-API -->
+            <url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
+        </repository>
+        <repository>
+            <id>sk89q-repo</id>
+            <!-- WorldGuard -->
+            <url>http://maven.sk89q.com/repo/</url>
+        </repository>
+        <repository>
+            <id>janmm14-everything</id>
+            <url>https://ci.janmm14.de/plugin/repository/everything/</url>
+        </repository>
+        <repository>
+            <id>confuser-repo</id>
+            <url>http://ci.frostcast.net/plugin/repository/everything</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>1.8.8-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>me.ryanhamshire</groupId>
+            <artifactId>GriefPrevention</artifactId>
+            <version>13.4</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/GriefPrevention.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.plotsquared</groupId>
+            <artifactId>PlotSquared-Bukkit</artifactId>
+            <version>3.2.24</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/PlotSquared-Bukkit.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.sk89q</groupId>
+            <artifactId>worldguard</artifactId>
+            <version>6.0.0-SNAPSHOT</version>
+            <scope>provided</scope>
+            <exclusions>
+                <exclusion><!-- exclude old bukkit api -->
+                    <groupId>org.bukkit</groupId>
+                    <artifactId>bukkit</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency><!-- less code :) -->
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.14.8</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency> <!-- for @javax.annotation.Nullable -->
+            <groupId>com.google.code.findbugs</groupId>
+            <artifactId>jsr305</artifactId>
+            <version>3.0.0</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency> <!-- some intellij annotations -->
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>13.0</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <defaultGoal>clean install</defaultGoal>
+        <sourceDirectory>src/</sourceDirectory>
+        <resources>
+            <resource>
+                <directory>resources/</directory>
+            </resource>
+        </resources>
+    </build>
+</project>
