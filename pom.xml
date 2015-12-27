@@ -50,6 +50,11 @@
             <url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
         </repository>
         <repository>
+            <id>sonatype-oss-repo</id>
+            <!-- BungeeCord -->
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        </repository>
+        <repository>
             <id>sk89q-repo</id>
             <!-- WorldGuard -->
             <url>http://maven.sk89q.com/repo/</url>
